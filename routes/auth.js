@@ -22,9 +22,7 @@ router.post("/register", async (req, res) => {
 
     const user = new User({name, email,username,photo, pin });
     
-       if (user) {
-      return res.send("user schema error",user);
-    }
+
 
       await user.save();
  
