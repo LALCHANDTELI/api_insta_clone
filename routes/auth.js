@@ -22,7 +22,10 @@ router.post("/register", async (req, res) => {
 
     const user = new User({name, email,username,photo, pin });
 
-    await user.save();
+      const save= await user.save();
+     if (save) {
+      return res.send("user save or not",save);
+    }
 
     res.send("user successfully saved and store in database");
   } catch (error) {
