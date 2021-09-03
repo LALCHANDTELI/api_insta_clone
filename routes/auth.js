@@ -26,10 +26,8 @@ router.post("/register", async (req, res) => {
       return res.send("user schema error",user);
     }
 
-      const save= await user.save();
-     if (save) {
-      return res.send("user save or not",save);
-    }
+      await user.save();
+ 
 
     return res.send("user successfully saved and store in database");
   } catch (error) {
