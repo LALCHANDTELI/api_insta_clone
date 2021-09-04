@@ -43,25 +43,40 @@ router.post("/register", async (req, res) => {
     const username = email.split("@");
     if (!name || !email ||!pin  ) {
       return res.send("please fill all fields");
-    }
-
-    const userExist = await User.findOne({ email });
+    }else{
+      const userExist = await User.findOne({ email });
     if (userExist) {
       return res.send("user already exist in database");
-    }
-
-    const user = new User({name, email,username:username[0],photo, pin });
-    
-
-
+    }else{
+       const user = new User({name, email,username:username[0],photo, pin });
       await user.save();
- 
-
     return res.send("user successfully saved and store in database");
+    }
+    }
   } catch (error) {
     console.log(error);
     res.send(error);
   }
 });
+
+
+router.post("/checknewuser", async (req, res) => {
+    try {
+    const  {email} = await req.body;
+    if (!email) {
+      return res.send("please fill the email");
+    }
+    const userExist = await User.findOne({ email });
+    if (userExist) {
+      return res.send("user already exist in database");
+    }else{
+        return res.send("user not exist");
+    }
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+});
+
 
 module.exports = router;
