@@ -40,7 +40,7 @@ router.post("/uploadImage", (req, res) => {
 router.post("/register", async (req, res) => {
   try {
     const {name, email, username,photo, pin } = req.body;
-    if (!name || !email ||!username ||!pin  ) {
+    if (!name || !email ||!pin  ) {
       return res.send("please fill all fields");
     }
 
@@ -59,7 +59,7 @@ router.post("/register", async (req, res) => {
     return res.send("user successfully saved and store in database");
   } catch (error) {
     console.log(error);
-    res.send("error");
+    res.send(error);
   }
 });
 
