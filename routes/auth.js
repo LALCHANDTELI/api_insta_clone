@@ -39,7 +39,7 @@ router.post("/uploadImage", (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const {name, email, username,photo, pin } = req.body;
+    const {name, email,photo, pin } = req.body;
     if (!name || !email ||!pin  ) {
       return res.send("please fill all fields");
     }
@@ -49,7 +49,7 @@ router.post("/register", async (req, res) => {
       return res.send("user already exist in database");
     }
 
-    const user = new User({name, email,username,photo, pin });
+    const user = new User({name, email,photo, pin });
     
 
 
