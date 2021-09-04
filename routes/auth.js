@@ -59,7 +59,7 @@ router.post("/register", async (req, res) => {
     return res.send("user successfully saved and store in database");
   } catch (error) {
     console.log(error);
-    res.send(error);
+    res.send("error");
   }
 });
 
