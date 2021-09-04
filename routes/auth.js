@@ -1,12 +1,41 @@
 const express = require("express");
 const router = express.Router();
 
+
+const fileUpload = require("express-fileupload");
+const cloudinary = require("cloudinary").v2;
+
+router.use(
+  fileUpload({
+    useTempFiles: true,
+  })
+);
+
 require("../db/conn");
 const User = require("../models/User");
+
+
+
+
 
 router.get("/", (req, res) => {
   res.send("health okay");
 });
+
+
+
+
+
+router.post("/uploadImage", (req, res) => {
+  const file = req.files.image;
+  cloudinary.uploader.upload(file.tempFilePath, (error, result) => {
+    if (error) throw error;
+    res.send(result);
+  });
+});
+
+
+
 
 router.post("/register", async (req, res) => {
   try {
