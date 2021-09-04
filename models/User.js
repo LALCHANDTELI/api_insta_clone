@@ -14,7 +14,7 @@ name:{
   },
   username:{
     type: String,
-    default:email.split("@")[0],
+  required: true ,
   },
 
   photo:{
