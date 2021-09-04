@@ -7,7 +7,7 @@ mongoose.connect(process.env.DATABASE).catch((error) => {
 
 
 cloudinary.config({
-  cloud_name: "dcxhqv5lu",
-  api_key: "431785148661475",
-  api_secret: "EZE1Go9aONy0pkA4M5YlNSBTUVY",
+  cloud_name: process.env.CLOUD,
+  api_key: process.env.KEY,
+  api_secret: process.env.SECRET,
 });
