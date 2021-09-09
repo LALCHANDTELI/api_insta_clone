@@ -27,12 +27,7 @@ name:{
   }
 })
 
-UserSchema.pre("save", async function (next) {
-  if (this.isModified("pin")) {
-    this.pin = await bcrypt.hash(this.pin, 12);
-  }
-  next();
-});
+
 
 const User = mongoose.model("users", UserSchema);
 
