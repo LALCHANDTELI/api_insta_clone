@@ -87,7 +87,7 @@ router.post("/login", async (req, res) => {
     if (!email || !pin) {
       return res.send("please fill the email");
     }
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email ,pin });
     if (user) {
       return res.send(user);
     }else{
