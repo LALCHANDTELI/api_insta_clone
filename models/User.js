@@ -22,7 +22,7 @@ name:{
     default:"no photo"
   },
   pin: {
-    type: Number,
+    type: String,
     required: true
   }
 })
