@@ -77,7 +77,7 @@ router.post("/login", async (req, res) => {
       
     const user = await User.findOne({ email });
     if (user) {
-      return res.send(user.data.pin);
+      return res.send(user);
     }else{
         return res.send("wrong email and pin");
     }
