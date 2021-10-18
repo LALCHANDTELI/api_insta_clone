@@ -39,20 +39,11 @@ router.post("/uploadImage", (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const  {name, email,photo, pin } = await req.body;
+    const  {name, email, pin } = await req.body;
     const username = email.split("@");
-    if (!name || !email ||!pin  ) {
-      return res.send("please fill all fields");
-    }else{
-      const userExist = await User.findOne({ email });
-    if (userExist) {
-      return res.send("user already exist in database");
-    }else{
-       const user = new User({name, email,username:username[0],photo, pin });
+       const user = new User({name, email,username:username[0], pin });
       await user.save();
     return res.send("user successfully saved and store in database");
-    }
-    }
   } catch (error) {
     console.log(error);
     res.send(error);
