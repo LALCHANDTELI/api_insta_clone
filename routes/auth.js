@@ -73,9 +73,9 @@ router.post("/checknewuser", async (req, res) => {
 
 router.post("/login", async (req, res) => {
     try {
-    const  {email,pin} = await req.body;
+    const  {email} = await req.body;
       
-    const user = await User.findOne({ email ,pin });
+    const user = await User.findOne({ email });
     if (user) {
       return res.send(user);
     }else{
