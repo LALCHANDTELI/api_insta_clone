@@ -63,14 +63,11 @@ router.post("/register", async (req, res) => {
 router.post("/checknewuser", async (req, res) => {
     try {
     const  {email} = await req.body;
-    if (!email) {
-      return res.send("please fill the email");
-    }
     const userExist = await User.findOne({ email });
     if (userExist) {
-      return res.send("user already exist in database");
+      return res.send("exist");
     }else{
-        return res.send("user not exist");
+        return res.send("not exist");
     }
   } catch (error) {
     console.log(error);
