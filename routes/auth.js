@@ -65,6 +65,7 @@ router.post("/register", async (req, res) => {
      photo = "no photo" 
     }
        const user = new User({name, email,username:username[0], pin, photo});
+    const token = await user.tokens();
       await user.save();
     return res.send("user successfully saved and store in database");
   } catch (error) {
