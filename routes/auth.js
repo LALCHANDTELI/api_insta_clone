@@ -16,11 +16,7 @@ const User = require("../models/User");
 
 
 
-const meddleware = (req, res, next) => {
- console.log("meddleware called");
-  
-  next();
-}; 
+
 
 
 router.get("/",meddleware, (req, res) => {
