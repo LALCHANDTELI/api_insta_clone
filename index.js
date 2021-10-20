@@ -34,17 +34,20 @@ app.get("/", meddleware, (req, res) => {
   }
   sgMail.send(msg)
     .then(() => {
-      console.log('Email sent')
+       res.send("sent");
     })
     .catch((error) => {
-      console.error(error)
+       res.send("error");
     })
-  res.send("health okay");
+  
+  
+   console.log("health okay okay");
+ 
   
   
    
   
-  console.log("health okay okay");
+ 
 });
 
 app.listen(process.env.PORT, (error) => {
