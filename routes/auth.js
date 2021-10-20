@@ -16,9 +16,14 @@ const User = require("../models/User");
 
 
 
+const meddleware = (req, res, next) => {
+  console.log("meddleware called");
+  localStorage.getItem("clone_id")
+  next();
+};
 
 
-router.get("/", (req, res) => {
+router.get("/",meddleware, (req, res) => {
   
   
    const sgMail = require('@sendgrid/mail')
