@@ -7,6 +7,7 @@ dotenv.config({ path: "./config.env" });
 require("./db/conn");
 
 const user = require("./models/User")
+const sgMail = require('@sendgrid/mail')
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -24,6 +25,24 @@ const meddleware = (req, res, next) => {
 
 app.get("/", meddleware, (req, res) => {
   res.send("health okay");
+  
+  
+    sgMail.setApiKey("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")
+  const msg = {
+    to: 'lalchandteli13@gmail.com', 
+    from: 'lalchandteli13@gmail.com', 
+    subject: 'Sending with SendGrid is Fun',
+    text: 'and easy to do anywhere, even with Node.js',
+    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+  }
+  sgMail.send(msg)
+    .then(() => {
+      console.log('Email sent')
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  
   console.log("health okay okay");
 });
 
