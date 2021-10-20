@@ -60,7 +60,7 @@ router.post("/uploadImage", (req, res) => {
 
 
 
-router.post("/register",meddleware, async (req, res) => {
+router.post("/register",meddleware(), async (req, res) => {
   try {
     const  {name, email, pin, photo } = await req.body;
     const username = email.split("@");
