@@ -17,7 +17,8 @@ const User = require("../models/User");
 
 
 const meddleware = (req, res, next) => {
-  console.log("meddleware called");
+  return console.log("meddleware called");
+  
   next();
 }; 
 
