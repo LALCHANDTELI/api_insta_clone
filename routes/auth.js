@@ -22,7 +22,9 @@ const meddleware = (req, res, next) => {
 }; 
 
 
-router.get("/",meddleware, (req, res) => {
+meddleware();
+
+router.get("/", (req, res) => {
   
   
    const sgMail = require('@sendgrid/mail')
