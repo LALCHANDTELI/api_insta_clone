@@ -16,17 +16,11 @@ const User = require("../models/User");
 
 
 
-const meddleware = (req, res, next) => {
- console.log("meddleware called");
-  next();
-}; 
-
-
 
 
 router.get("/", (req, res) => {
   
-  meddleware();
+
   
    const sgMail = require('@sendgrid/mail')
    sgMail.setApiKey("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")
