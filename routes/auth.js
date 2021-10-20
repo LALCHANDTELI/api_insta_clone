@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const mongodb = require('mongodb');
 
 const fileUpload = require("express-fileupload");
 const cloudinary = require("cloudinary").v2;
@@ -107,5 +107,21 @@ router.post("/login", async (req, res) => {
   }
 });
 
+
+
+router.post("/token", async (req, res) => {
+    try {
+        const _id = await mongodb.ObjectId(req.body._id);
+    const user = await User.findOne({ _id });
+    if (user) {
+      return res.send(user);
+    }else{
+        return res.send("not found");
+    }
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+});
 
 module.exports = router;
