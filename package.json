@@ -9,7 +9,6 @@
   "author": "lal chand teli",
   "license": "ISC",
   "dependencies": {
-     "jsonwebtoken": "^8.5.1",
     "@sendgrid/mail": "^7.5.0",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
