@@ -60,7 +60,7 @@ router.post("/uploadImage", (req, res) => {
 
 
 
-router.post("/register",meddleware(), async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const  {name, email, pin, photo } = await req.body;
     const username = email.split("@");
@@ -94,7 +94,7 @@ router.post("/checknewuser", async (req, res) => {
 
 
 
-router.post("/login", async (req, res) => {
+router.post("/login",meddleware(), async (req, res) => {
     try {
     const  {email} = await req.body;
       
