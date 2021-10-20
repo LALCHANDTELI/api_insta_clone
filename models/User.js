@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-
+const jwt = require('jsonwebtoken');
 const UserSchema = new Schema({
 name:{
   type:String,
@@ -26,7 +26,15 @@ name:{
   }
 })
 
-
+UserSchema.methods.tokens = async function(){
+  try{
+   const t= jwt.sign({_id:this._id.toString(),"hellothisislalchandtelifromrailabhilwararajasthanindia})
+              console.log(t)
+  }
+  catch(error){
+    console.log(error);
+  }
+}
 
 const User = mongoose.model("users", UserSchema);
 
