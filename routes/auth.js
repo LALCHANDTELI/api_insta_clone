@@ -18,12 +18,11 @@ const User = require("../models/User");
 
 const meddleware = (req, res, next) => {
   console.log("meddleware called");
-  localStorage.getItem("clone_id")
   next();
 }; 
 
 
-router.get("/",meddleware, (req, res) => {
+router.get("/", (req, res) => {
   
   
    const sgMail = require('@sendgrid/mail')
@@ -50,7 +49,7 @@ router.get("/",meddleware, (req, res) => {
 
 
 
-router.post("/uploadImage",meddleware, (req, res) => {
+router.post("/uploadImage", (req, res) => {
   const file = req.files.image;
   cloudinary.uploader.upload(file.tempFilePath, (error, result) => {
     if (error) throw error;
@@ -78,7 +77,7 @@ router.post("/register",meddleware, async (req, res) => {
 });
 
 
-router.post("/checknewuser",meddleware, async (req, res) => {
+router.post("/checknewuser", async (req, res) => {
     try {
     const  {email} = await req.body;
     const userExist = await User.findOne({ email });
