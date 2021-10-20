@@ -17,19 +17,6 @@ app.use(require("./routes/auth"));
 
 
 
-
-const meddleware = (req, res, next) => {
-  console.log("meddleware called");
-  next();
-};
-
-app.get("/", meddleware, (req, res) => {
-   console.log("health okay okay");
-  res.send("health okay");
-});
-
-
-
 app.listen(process.env.PORT, (error) => {
   if (error) throw error;
 });
