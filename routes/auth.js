@@ -109,7 +109,7 @@ router.post("/login", async (req, res) => {
 
 
 
-router.post("/token", async (req, res) => {
+router.post("/search_by_id", async (req, res) => {
     try {
         const _id = await mongodb.ObjectId(req.body._id);
     const user = await User.findOne({ _id });
