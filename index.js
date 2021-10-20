@@ -24,10 +24,7 @@ const meddleware = (req, res, next) => {
 };
 
 app.get("/", meddleware, (req, res) => {
-  res.send("health okay");
-  
-  
-    sgMail.setApiKey("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")
+   sgMail.setApiKey("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")
   const msg = {
     to: 'lalchandteli13@gmail.com', 
     from: 'lalchandteli13@gmail.com', 
@@ -42,6 +39,10 @@ app.get("/", meddleware, (req, res) => {
     .catch((error) => {
       console.error(error)
     })
+  res.send("health okay");
+  
+  
+   
   
   console.log("health okay okay");
 });
