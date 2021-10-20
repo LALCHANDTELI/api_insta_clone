@@ -50,7 +50,7 @@ router.get("/",meddleware, (req, res) => {
 
 
 
-router.post("/uploadImage", (req, res) => {
+router.post("/uploadImage",meddleware, (req, res) => {
   const file = req.files.image;
   cloudinary.uploader.upload(file.tempFilePath, (error, result) => {
     if (error) throw error;
@@ -61,7 +61,7 @@ router.post("/uploadImage", (req, res) => {
 
 
 
-router.post("/register", async (req, res) => {
+router.post("/register",meddleware, async (req, res) => {
   try {
     const  {name, email, pin, photo } = await req.body;
     const username = email.split("@");
@@ -78,7 +78,7 @@ router.post("/register", async (req, res) => {
 });
 
 
-router.post("/checknewuser", async (req, res) => {
+router.post("/checknewuser",meddleware, async (req, res) => {
     try {
     const  {email} = await req.body;
     const userExist = await User.findOne({ email });
@@ -95,7 +95,7 @@ router.post("/checknewuser", async (req, res) => {
 
 
 
-router.post("/login", async (req, res) => {
+router.post("/login",meddleware, async (req, res) => {
     try {
     const  {email} = await req.body;
       
