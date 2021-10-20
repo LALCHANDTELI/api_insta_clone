@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors())
 app.use(express.json())
-
+app.use(require("./routes/auth"));
 
 
 
@@ -24,21 +24,11 @@ const meddleware = (req, res, next) => {
 };
 
 app.get("/", meddleware, (req, res) => {
-  
-  
- 
-  
-  
    console.log("health okay okay");
   res.send("health okay");
-  
-  
-   
-  
- 
 });
 
-app.use(require("./routes/auth"));
+
 
 app.listen(process.env.PORT, (error) => {
   if (error) throw error;
