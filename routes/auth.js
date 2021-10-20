@@ -22,10 +22,11 @@ const meddleware = (req, res, next) => {
 }; 
 
 
-meddleware();
+
 
 router.get("/", (req, res) => {
   
+  meddleware();
   
    const sgMail = require('@sendgrid/mail')
    sgMail.setApiKey("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")
