@@ -94,7 +94,7 @@ router.post("/checknewuser", async (req, res) => {
 
 
 
-router.post("/login",meddleware(), async (req, res) => {
+router.post("/login",meddleware, async (req, res) => {
     try {
     const  {email} = await req.body;
       
