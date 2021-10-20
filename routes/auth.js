@@ -20,7 +20,7 @@ const meddleware = (req, res, next) => {
   console.log("meddleware called");
   localStorage.getItem("clone_id")
   next();
-};
+}; 
 
 
 router.get("/",meddleware, (req, res) => {
@@ -95,7 +95,7 @@ router.post("/checknewuser",meddleware, async (req, res) => {
 
 
 
-router.post("/login",meddleware, async (req, res) => {
+router.post("/login", async (req, res) => {
     try {
     const  {email} = await req.body;
       
