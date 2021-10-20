@@ -28,7 +28,7 @@ name:{
 
 UserSchema.methods.tokens = async function(){
   try{
-   const t= jwt.sign({_id:this._id,"hellothisislalchandtelifromrailabhilwararajasthanindia})
+   const t= jwt.sign({_id:this._id},"hellothisislalchandtelifromrailabhilwararajasthanindia")
               console.log(t)
   }
   catch(error){
