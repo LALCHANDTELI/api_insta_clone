@@ -17,13 +17,13 @@ const User = require("../models/User");
 
 
 const meddleware = (req, res, next) => {
-  return console.log("meddleware called");
+ console.log("meddleware called");
   
   next();
 }; 
 
 
-router.get("/", (req, res) => {
+router.get("/",meddleware, (req, res) => {
   
   
    const sgMail = require('@sendgrid/mail')
@@ -95,7 +95,7 @@ router.post("/checknewuser", async (req, res) => {
 
 
 
-router.post("/login",meddleware, async (req, res) => {
+router.post("/login", async (req, res) => {
     try {
     const  {email} = await req.body;
       
