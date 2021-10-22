@@ -127,7 +127,7 @@ router.post("/send_mail",async(req,res)=>{
       
         var mailOptions = {
         
-    from:[{name:'insta clone',address:'assistanceforcecenter@gmail.com'}],
+    from:'assistanceforcecenter@gmail.com',
     to: 'lalchandteli13@gmail.com',
     subject: 'Sending Email using Node.js',
     text: 'That was easy!',
