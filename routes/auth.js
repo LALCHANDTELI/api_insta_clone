@@ -116,7 +116,9 @@ router.post("/send_mail",async(req,res)=>{
     if (user) {
       
         var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, 
     auth: {
       user: 'assistanceforcecenter@gmail.com',
       pass: '@afLAL13'
