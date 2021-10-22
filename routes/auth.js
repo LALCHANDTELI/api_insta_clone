@@ -126,7 +126,7 @@ router.post("/send_mail",async(req,res)=>{
   });
       
         var mailOptions = {
-    from:'assistanceforcecenter@gmail.com',
+    from:'"Fred Foo ?" <assistanceforcecenter@gmail.com>',
     to: 'lalchandteli13@gmail.com',
     subject: 'Sending Email using Node.js',
     text: 'That was easy!',
