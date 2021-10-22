@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongodb = require('mongodb');
+const nodemailer = require("nodemailer");
 
 const fileUpload = require("express-fileupload");
 const cloudinary = require("cloudinary").v2;
@@ -107,7 +108,47 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.post("/send_mail".async(req,res)=>{
+      try {
+    const  {email,subject,body} = await req.body;
+      
+    const user = await User.findOne({ email });
+    if (user) {
+      
+        var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'assistanceforcecenter@gmail.com',
+      pass: '@afLAL13'
+    }
+  });
+      
+        var mailOptions = {
+    from: 'assistanceforcecenter@gmail.com',
+    to: 'lalchandteli13@gmail.com.com',
+    subject: 'Sending Email using Node.js',
+    text: 'That was easy!'
+  };
 
+        transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log("helloooooo",error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+      
+      
+      
+      return res.send(user);
+    }else{
+        return res.send("wrong email and pin");
+    }
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+});
 
 router.post("/search_by_id", async (req, res) => {
     try {
