@@ -127,7 +127,7 @@ router.post("/send_mail",async(req,res)=>{
       
         var mailOptions = {
           
-    from{
+    from:{
     name: 'lal',
     address: 'assistanceforcecenter@gmail.com'
     },
