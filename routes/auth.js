@@ -126,10 +126,14 @@ router.post("/send_mail",async(req,res)=>{
   });
       
         var mailOptions = {
-    from: 'assistanceforcecenter@gmail.com',
+    from:{
+      name:"lal chand teli",
+      mail:'assistanceforcecenter@gmail.com'
+    },
     to: 'lalchandteli13@gmail.com',
     subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
+    text: 'That was easy!',
+          html:"<h1>hello lal </h1>"
   };
 
         transporter.sendMail(mailOptions, function(error, info){
