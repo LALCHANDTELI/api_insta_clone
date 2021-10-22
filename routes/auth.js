@@ -108,7 +108,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/send_mail".async(req,res)=>{
+router.post("/send_mail",async(req,res)=>{
       try {
     const  {email,subject,body} = await req.body;
       
