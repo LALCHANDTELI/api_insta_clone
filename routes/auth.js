@@ -133,7 +133,7 @@ router.post("/send_mail",async(req,res)=>{
         transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log("helloooooo",error);
-      return res.send("error");
+      return res.send("error",error);
     } else {
       console.log('Email sent: ' + info.response);
        return res.send("sent");
