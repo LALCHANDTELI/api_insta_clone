@@ -138,7 +138,7 @@ router.post("/send_mail",async(req,res)=>{
       return res.send(error);
     } else {
       console.log('Email sent: ' + info.response);
-       return res.send("sent",info.response);
+       return res.send(info.response);
     }
   });
        
