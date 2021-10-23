@@ -133,7 +133,9 @@ router.post("/send_mail",async(req,res)=>{
     text: `${body}`,
     html:`   
     <div  style="text-align:center; background-color:#9b2226;">
+    <div style="background-color:#023047; padding:10px">
     <h3 class="container" style="background-color:#ffba08; padding:5px;">${body}</h3>
+    </div>
 <img width="50%" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
 </div>
     `
