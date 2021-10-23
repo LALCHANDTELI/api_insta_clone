@@ -137,6 +137,11 @@ router.post("/send_mail",async(req,res)=>{
 display: grid;
 place-content: center;
   }
+  
+  .otp_img img{
+size:100%;
+  }
+  
 </style>
   <img class="otp_img" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
   </div>
