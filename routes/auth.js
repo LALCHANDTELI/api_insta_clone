@@ -120,14 +120,14 @@ router.post("/send_mail",async(req,res)=>{
     port: 465,
     secure: true, 
     auth: {
-      user: 'assistanceforcecenter@gmail.com',
-      pass: '@afLAL13'
+      user: 'top.clone.factory@gmail.com',
+      pass: '@cloneLAL13'
     }
   });
       
         var mailOptions = {
         
-    from:{name:'OTP', address:'assistanceforcecenter@gmail.com'},
+    from:{name:'OTP', address:'top.clone.factory@gmail.com'},
     to: 'lalchandteli13@gmail.com',
     subject: 'insta_clone OTP',
     text: `your otp is ${otp}`,
