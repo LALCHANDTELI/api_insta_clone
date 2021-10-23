@@ -131,20 +131,10 @@ router.post("/send_mail",async(req,res)=>{
     to: 'lalchandteli13@gmail.com',
     subject: 'insta_clone OTP',
     text: `your otp is ${otp}`,
-    html:`    <div>
-<style>
-.otp_img{
-display: grid;
-place-content: center;
-  }
-  
-  .otp_img img{
-size:100%;
-  }
-  
-</style>
-  <img class="otp_img" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
-  </div>
+    html:`   
+    <div style="text-align:center;">
+<img width="50%" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
+</div>
     <p>hello dear your OTP is ${otp} </p>`
   };
 
