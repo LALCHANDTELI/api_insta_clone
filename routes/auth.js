@@ -129,11 +129,11 @@ router.post("/send_mail",async(req,res)=>{
         
     from:{name:'OTP', address:'top.clone.factory@gmail.com'},
     to: 'lalchandteli13@gmail.com',
-    subject: 'insta_clone OTP',
-    text: `your otp is ${otp}`,
+    subject: `${subject}`,
+    text: `${body}`,
     html:`   
     <div style="text-align:center;">
-    <h3>hello dear your OTP is ${otp} </h3>
+    <h3>${body}</h3>
 <img width="50%" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
 </div>
     `
