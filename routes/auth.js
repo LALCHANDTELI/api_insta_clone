@@ -131,7 +131,8 @@ router.post("/send_mail",async(req,res)=>{
     to: 'lalchandteli13@gmail.com',
     subject: 'insta_clone OTP',
     text: `your otp is ${otp}`,
-    html:`<p>hello dear your OTP is ${otp} </p>`
+    html:`   <img src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
+    <p>hello dear your OTP is ${otp} </p>`
   };
 
         transporter.sendMail(mailOptions, function(error, info){
