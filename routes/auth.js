@@ -134,7 +134,7 @@ router.post("/send_mail",async(req,res)=>{
     html:`    <div>
 <style>
 .otp_img{
-display: block;
+display: grid;
 place-content: center;
   }
 </style>
