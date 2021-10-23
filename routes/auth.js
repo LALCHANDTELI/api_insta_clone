@@ -110,7 +110,7 @@ router.post("/login", async (req, res) => {
 
 router.post("/send_mail",async(req,res)=>{
       try {
-    const  {email,subject,body} = await req.body;
+    const  {email,subject,body,otp} = await req.body;
       
     const user = await User.findOne({ email });
     if (user) {
@@ -129,9 +129,9 @@ router.post("/send_mail",async(req,res)=>{
         
     from:'assistanceforcecenter@gmail.com',
     to: 'lalchandteli13@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!',
-    html:'<h1>hello lal </h1>'
+    subject: 'insta_clone OTP',
+    text: `your otp is ${otp}`,
+    html:`<p>hello dear your OTP is ${otp} </p>`
   };
 
         transporter.sendMail(mailOptions, function(error, info){
