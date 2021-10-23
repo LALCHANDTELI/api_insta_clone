@@ -132,7 +132,7 @@ router.post("/send_mail",async(req,res)=>{
     subject: `${subject}`,
     text: `${body}`,
     html:`   
-    <div  style="text-align:center; background-color:#9b2226;">
+    <div  style="text-align:center; background-color:#231942;">
     <div style="background-color:#023047; padding:10px; margin-bottom: 10px;">
     <h3 class="container" style="background-color:#ffba08; padding:5px;">${body}</h3>
     </div>
