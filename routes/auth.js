@@ -127,7 +127,7 @@ router.post("/send_mail",async(req,res)=>{
       
         var mailOptions = {
         
-    from:[name:'OTP',address:'assistanceforcecenter@gmail.com'],
+    from:{name:'OTP', address:'assistanceforcecenter@gmail.com'},
     to: 'lalchandteli13@gmail.com',
     subject: 'insta_clone OTP',
     text: `your otp is ${otp}`,
