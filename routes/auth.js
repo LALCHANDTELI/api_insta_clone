@@ -133,9 +133,10 @@ router.post("/send_mail",async(req,res)=>{
     text: `your otp is ${otp}`,
     html:`   
     <div style="text-align:center;">
+    <h3>hello dear your OTP is ${otp} </h3>
 <img width="50%" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
 </div>
-    <p>hello dear your OTP is ${otp} </p>`
+    `
   };
 
         transporter.sendMail(mailOptions, function(error, info){
