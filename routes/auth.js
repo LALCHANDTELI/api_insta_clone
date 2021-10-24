@@ -173,6 +173,7 @@ router.put("/update_pin",async(req, res) => {
   }
   catch(error){
    console.log(error); 
+    res.send(error)
   }
 
 router.post("/search_by_id", async (req, res) => {
