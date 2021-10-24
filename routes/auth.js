@@ -165,8 +165,11 @@ router.post("/send_mail",async(req,res)=>{
 router.put("/update_pin",async(req, res) => {
   try {
     const {email,pin} = req.body
-    const user = await User.updateOne({email},{{$set:{pin}})
-    res.send(user)
+    const user = await User.updateOne({email},{{$set:{pin}}).toArray((error,result) => {
+        if (error) throw error;
+        res.status(201).send(result);
+    })  
+   
   }
   catch(error){
    console.log(error); 
@@ -175,7 +178,7 @@ router.put("/update_pin",async(req, res) => {
 router.post("/search_by_id", async (req, res) => {
     try {
         const _id = await mongodb.ObjectId(req.body._id);
-    const user = await User.findOne({ _id });
+    const user = await User.findOne({ _id })
     if (user) {
       return res.send(user);
     }else{
