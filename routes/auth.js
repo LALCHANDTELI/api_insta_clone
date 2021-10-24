@@ -165,10 +165,8 @@ router.post("/send_mail",async(req,res)=>{
 router.put("/update_pin",async(req, res) => {
   try {
     const {email,pin} = req.body
-    const user = await User.updateOne({{email},{$set:{pin}}}).toArray((error,result) => {
-        if (error) throw error;
-        res.status(201).send(result);
-    })  
+    const user = await User.updateMany({email,pin})
+        res.status(201).send(user);
    
   }
   catch(error){
