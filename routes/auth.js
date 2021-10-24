@@ -160,6 +160,18 @@ router.post("/send_mail",async(req,res)=>{
   }
 });
 
+
+
+router.put("/update_pin",async(req, res) => {
+  try {
+    const {email,pin} = req.body
+    const user = await User.updateOne({email},{{$set:{pin}})
+    res.send(user)
+  }
+  catch(error){
+   console.log(error); 
+  }
+
 router.post("/search_by_id", async (req, res) => {
     try {
         const _id = await mongodb.ObjectId(req.body._id);
