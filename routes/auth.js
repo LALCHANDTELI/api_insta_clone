@@ -114,9 +114,7 @@ router.post("/login", async (req, res) => {
 router.post("/welcome_mail",async(req,res)=>{
       try {
     const  {email,subject,body} = await req.body;
-      
-    const user = await User.findOne({ email });
-    if (user) {
+     
       
         var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -131,7 +129,7 @@ router.post("/welcome_mail",async(req,res)=>{
         var mailOptions = {
         
     from:{name:'WELCOME', address:'top.clone.factory@gmail.com'},
-    to: 'lalchandteli13@gmail.com',
+    to: email,
     subject: `${subject}`,
     text: `${body}`,
     html:`   
@@ -154,9 +152,7 @@ router.post("/welcome_mail",async(req,res)=>{
     }
   });
        
-    }else{
-        return res.send("wrong email and pin");
-    }
+
   } catch (error) {
     console.log(error);
     res.send(error);
