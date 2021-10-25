@@ -108,6 +108,65 @@ router.post("/login", async (req, res) => {
   }
 });
 
+
+
+
+router.post("/welcome_mail",async(req,res)=>{
+      try {
+    const  {email,subject,body} = await req.body;
+      
+    const user = await User.findOne({ email });
+    if (user) {
+      
+        var transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, 
+    auth: {
+      user: 'top.clone.factory@gmail.com',
+      pass: '@cloneLAL13'
+    }
+  });
+      
+        var mailOptions = {
+        
+    from:{name:'WELCOME', address:'top.clone.factory@gmail.com'},
+    to: 'lalchandteli13@gmail.com',
+    subject: `${subject}`,
+    text: `${body}`,
+    html:`   
+    <div  style="text-align:center; background-color:#003049;">
+    <div style="background-color:#023047; padding:10px; margin-bottom: 10px;">
+    <h3 class="container" style="background-color:#ffba08; padding:5px;">${body}</h3>
+    </div>
+<img width="50%" src="https://images.unsplash.com/photo-1533745848184-3db07256e163?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
+</div>
+    `
+  };
+
+        transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log("helloooooo",error);
+      return res.send(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+       return res.send("sent");
+    }
+  });
+       
+    }else{
+        return res.send("wrong email and pin");
+    }
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+});
+
+
+
+
+
 router.post("/send_mail",async(req,res)=>{
       try {
     const  {email,subject,body,otp} = await req.body;
