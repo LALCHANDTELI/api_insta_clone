@@ -168,7 +168,7 @@ router.post("/send_mail",async(req,res)=>{
     const  {email,subject,body,otp} = await req.body;
       
     const user = await User.findOne({ email });
-    if (user.data.email===email) {
+    if (ture) {
       
         var transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
