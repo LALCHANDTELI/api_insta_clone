@@ -183,7 +183,7 @@ router.post("/send_mail",async(req,res)=>{
         var mailOptions = {
         
     from:{name:'OTP', address:'top.clone.factory@gmail.com'},
-    to: 'lalchandteli13@gmail.com',
+    to: email,
     subject: `${subject}`,
     text: `${body}`,
     html:`   
