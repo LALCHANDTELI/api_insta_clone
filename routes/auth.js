@@ -165,7 +165,7 @@ router.post("/welcome_mail",async(req,res)=>{
 
 router.post("/send_mail",async(req,res)=>{
       try {
-    const  {email,subject,body,otp} = await req.body;
+    const  {email,subject,body} = await req.body;
       
     const user = await User.findOne({ email });
     if (true) {
