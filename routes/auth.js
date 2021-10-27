@@ -60,14 +60,13 @@ router.post("/uploadImage", (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const  {name, email, pin, photo } = await req.body;
+    const  {name, email, pin, photo, followers, following } = await req.body;
     const username = email.split("@");
     if(!photo){
      photo = "no photo" 
     }
     
-    const followers = {[]};
-     const following = {[]};
+   
        const user = new User({name, email,username:username[0], pin, photo,followers,following});
       await user.save();
     return res.send("user successfully saved and store in database");
