@@ -24,11 +24,11 @@ name:{
     required: true
   },
   followers: {
-    type: ObjectId,
+    type: Array,
      required: true
   },
   following: {
-    type: ObjectId,
+    type: Array,
      required: true
   }
 })
