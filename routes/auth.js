@@ -21,13 +21,7 @@ const User = require("../models/User");
 
 router.get("/", (req, res) => {
   
-try{
    res.send("health okay okay");
-}
-
-    .catch((error) => {
-       res.send("error");
-    })
   
  
 });
