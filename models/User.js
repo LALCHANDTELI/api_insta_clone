@@ -26,7 +26,7 @@ name:{
   followers: {
     type: ObjectId,
   },
-  followings: {
+  following: {
     type: ObjectId,
   }
 })
