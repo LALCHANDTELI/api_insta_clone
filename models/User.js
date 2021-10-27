@@ -30,6 +30,10 @@ name:{
   following: {
     type: Array,
      required: true
+  },
+  posts: {
+     type: Array,
+     required: true
   }
 })
 
