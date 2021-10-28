@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const PostSchema = new Schema({
 id:{
-   type: mongoose.ObjectId,
+   type: String,
     required: true,
     unique:true
   },
