@@ -70,7 +70,7 @@ router.post("/add_new_post", async (req, res) => {
     return res.send("post uploaded successfully");
   } catch (error) {
     console.log(error);
-    res.send(error);
+    res.send(error.message);
   }
 });
 
