@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const PostSchema = new Schema({
-id:{
+user_id:{
    type: String,
     required: true
   },
