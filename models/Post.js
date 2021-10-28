@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const PostSchema = new Schema({
-   _id:{
-   unique:false
-  },
 user_id:{
    type: String,
     required: true,
@@ -25,7 +22,9 @@ user_id:{
     required: true,
      unique:false
   }
-})
+},
+ { _id : false }
+  )
 
 
 const Post = mongoose.model("posts", PostSchema);
