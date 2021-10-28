@@ -14,6 +14,7 @@ router.use(
 
 require("../db/conn");
 const User = require("../models/User");
+const Post = require("../models/Post");
 
 
 
@@ -53,6 +54,20 @@ router.post("/register", async (req, res) => {
        const user = new User({name, email,username:username[0], pin, photo,followers,following,posts});
       await user.save();
     return res.send("user successfully saved and store in database");
+  } catch (error) {
+    console.log(error);
+    res.send("error catch");
+  }
+});
+
+
+
+router.post("/add_new_post", async (req, res) => {
+  try {
+    const  {id, username,  photo, descriptions } = await req.body;
+       const post = new Post({id, username, photo, descriptions});
+      await post.save();
+    return res.send("post uploaded successfully");
   } catch (error) {
     console.log(error);
     res.send("error catch");
