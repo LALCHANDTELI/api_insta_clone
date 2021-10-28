@@ -64,8 +64,8 @@ router.post("/register", async (req, res) => {
 
 router.post("/add_new_post", async (req, res) => {
   try {
-    const  {id, username,  photo, descriptions } = await req.body;
-       const post = new Post({id, username, photo, descriptions});
+    const  {user_id, username,  photo, descriptions } = await req.body;
+       const post = new Post({user_id, username, photo, descriptions});
       await post.save();
     return res.send("post uploaded successfully");
   } catch (error) {
