@@ -3,8 +3,7 @@ const { Schema } = mongoose;
 const PostSchema = new Schema({
 id:{
    type: String,
-    required: true,
-    unique:true
+    required: true
   },
   username:{
     type: String,
