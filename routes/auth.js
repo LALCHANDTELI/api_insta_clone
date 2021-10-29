@@ -79,7 +79,7 @@ router.post("/add_new_post", async (req, res) => {
 
 router.get("/all_post", async (req, res) => {
   try {
-      const all_post = await Post.find();
+      const all_post = await Post.find().sort({_id:-1});
     return res.send(all_post);
   } catch (error) {
     console.log(error);
