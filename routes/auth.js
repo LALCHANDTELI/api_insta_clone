@@ -75,6 +75,20 @@ router.post("/add_new_post", async (req, res) => {
 });
 
 
+
+
+router.get("/all_post", async (req, res) => {
+  try {
+      const all_post = await Post.find();
+    return res.send(all_post);
+  } catch (error) {
+    console.log(error);
+    res.send(error.message);
+  }
+});
+
+
+
 router.post("/checknewuser", async (req, res) => {
     try {
     const  {email} = await req.body;
