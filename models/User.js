@@ -22,6 +22,14 @@ name:{
   pin: {
     type: String,
     required: true
+  },
+  followers: {
+    type: Array,
+    required: true
+  },
+  following: {
+    type: Array,
+    required: true
   }
 })
 
