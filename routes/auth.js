@@ -262,8 +262,8 @@ router.put("/update_pin",async(req, res) => {
 
 router.put("/update_profile",async(req, res) => {
   try {
-    const {email,photo} = req.body
-    const user = await User.updateMany({email},{$set:{photo}});
+    const {username,photo} = req.body
+    const user = await User.updateMany({username},{$set:{photo}});
         res.status(201).send(user);
    
   }
