@@ -164,7 +164,7 @@ router.post("/welcome_mail",async(req,res)=>{
     <div style="background-color:#023047; padding:10px; margin-bottom: 10px;">
     <h3 class="container" style="background-color:#ffba08; padding:5px;">${body}</h3>
     </div>
-<img width="50%" src="https://images.unsplash.com/photo-1533745848184-3db07256e163?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
+<img width="50%" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1635513401/welcome_qlvmsr.jpg"/>
 </div>
     `
   };
@@ -218,7 +218,7 @@ router.post("/send_mail",async(req,res)=>{
     <div style="background-color:#023047; padding:10px; margin-bottom: 10px;">
     <h3 class="container" style="background-color:#ffba08; padding:5px;">${body}<br/><span style="color:#ffba08;">THIS OTP VALID FOR 5:00 Minutes</span></h3>
     </div>
-<img width="50%" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1630771178/sl2kiu8yxszpdztnw8nz.jpg"/>
+<img width="50%" src="https://res.cloudinary.com/dcxhqv5lu/image/upload/v1635513470/saeed-karimi-JrrWC7Qcmhs-unsplash_pwcvaj.jpg"/>
 </div>
     `
   };
