@@ -258,6 +258,23 @@ router.put("/update_pin",async(req, res) => {
   
 });
 
+
+
+router.put("/update_profile",async(req, res) => {
+  try {
+    const {email,photo} = req.body
+    const user = await User.updateMany({email},{$set:{photo}});
+        res.status(201).send(user);
+   
+  }
+  catch(error){
+   console.log(error); 
+    res.send(error)
+  }
+  
+});
+
+
 router.post("/search_by_id", async (req, res) => {
     try {
         const _id = await mongodb.ObjectId(req.body._id);
