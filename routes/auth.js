@@ -89,6 +89,20 @@ router.get("/all_post", async (req, res) => {
 
 
 
+router.get("/user_post", async (req, res) => {
+  try {
+    
+    const {userN} = await req.body;
+      const all_post = await Post.find({userN}).sort({_id:-1});
+    return res.send(all_post);
+  } catch (error) {
+    console.log(error);
+    res.send(error.message);
+  }
+});
+
+
+
 router.post("/checknewuser", async (req, res) => {
     try {
     const  {email} = await req.body;
