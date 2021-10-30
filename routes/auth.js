@@ -141,9 +141,8 @@ router.post("/search_user", async (req, res) => {
     try {
     const  {username} = await req.body;
       
-      
-
-      
+      if(username.length>0){
+         
    const users = await User.find({ username: { $regex: '.*' + username + '.*' } }).limit(5);
       
       
@@ -151,6 +150,11 @@ router.post("/search_user", async (req, res) => {
         return data.username
       })
       res.send(data);
+}else{
+res.send("empty");
+}
+
+
       
    
   } catch (error) {
