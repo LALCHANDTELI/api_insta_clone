@@ -136,6 +136,23 @@ router.post("/login", async (req, res) => {
 });
 
 
+router.post("/find_by_username", async (req, res) => {
+    try {
+    const  {username} = await req.body;
+      
+    const user = await User.findOne({ username });
+    if (user) {
+      return res.send(user);
+    }else{
+        return res.send("user not found");
+    }
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+});
+
+
 
 router.post("/search_user", async (req, res) => {
     try {
