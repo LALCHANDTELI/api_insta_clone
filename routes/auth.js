@@ -141,7 +141,7 @@ router.post("/search_user", async (req, res) => {
     try {
     const  {username} = await req.body;
       
-   const users = await User.find({username: /username/}).limit(5);
+   const users = await User.find({username: /"13"/}).limit(5);
       res.send(users);
       
    
