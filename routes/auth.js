@@ -141,7 +141,7 @@ router.post("/search_user", async (req, res) => {
     try {
     const  {username} = await req.body;
       
-   const users = await User.findMany({username: new RegExp('^'+username+'$', "i")});
+   const users = await User.find({username: /username/}).limit(5);
       res.send(users);
       
    
