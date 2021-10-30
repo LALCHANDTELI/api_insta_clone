@@ -154,9 +154,7 @@ router.post("/search_user", async (req, res) => {
 
 
 
-model.findOne({name: new RegExp('^'+name+'$', "i")}, function(err, doc) {
-  //Do your action here..
-});
+
 
 
 
