@@ -62,7 +62,7 @@ router.post("/register", async (req, res) => {
 
 
 
-router.post("/follow", async (req, res) => {
+router.put("/follow", async (req, res) => {
   try {
     const  {username, follower} = await req.body;
     
