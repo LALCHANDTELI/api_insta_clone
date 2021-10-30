@@ -145,7 +145,7 @@ router.post("/search_user", async (req, res) => {
 
       
    const users = await User.find({ username: { $regex: '.*' + username + '.*' } }).limit(5);
-      res.send(users.username);
+      res.send(users);
       
    
   } catch (error) {
