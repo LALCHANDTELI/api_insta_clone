@@ -137,6 +137,29 @@ router.post("/login", async (req, res) => {
 
 
 
+router.post("/search_user", async (req, res) => {
+    try {
+    const  {username} = await req.body;
+      
+   const users = await User.findMany({username: new RegExp('^'+username+'$', "i")});
+      res.send(users);
+      
+   
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+});
+
+
+
+
+model.findOne({name: new RegExp('^'+name+'$', "i")}, function(err, doc) {
+  //Do your action here..
+});
+
+
+
 
 router.post("/welcome_mail",async(req,res)=>{
       try {
