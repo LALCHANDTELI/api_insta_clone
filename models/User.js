@@ -23,12 +23,12 @@ name:{
     type: String,
     required: true
   },
-  followers:[ 
+  followers:{
     type: Array,
-  ],
-  following: [
+  },
+  following: {
      type: Array,
-  ]
+  }
 })
 
 
