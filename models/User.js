@@ -1,36 +1,35 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const UserSchema = new Schema({
-name:{
-  type:String,
-  required:true
-},
+  name: {
+    type: String,
+    required: true,
+  },
   email: {
     type: String,
     required: true,
-    unique:true
+    unique: true,
   },
-  username:{
+  username: {
     type: String,
-  required: true ,
+    required: true,
   },
 
-  photo:{
+  photo: {
     type: String,
-    default:"no photo"
+    default: "no photo",
   },
   pin: {
     type: String,
-    required: true
+    required: true,
   },
-  followers:[
+  followers: {
     type: Array,
-  ],
-  following: [
-     type: Array,
-  ]
-})
-
+  },
+  following: {
+    type: Array,
+  },
+});
 
 const User = mongoose.model("users", UserSchema);
 

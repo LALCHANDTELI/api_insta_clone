@@ -56,10 +56,26 @@ router.post("/register", async (req, res) => {
     return res.send("user successfully saved and store in database");
   } catch (error) {
     console.log(error);
-    res.send("error catch");
+    res.send(error);
   }
 });
 
+
+
+
+
+
+router.put("/follow", async (req, res) => {
+  try {
+    const  {username, follower} = await req.body;
+    const user  = await User.findOneAndUpdate({username},{$push:{followers:follower}})
+      await user.save();
+    return res.send("user successfully saved and store in database");
+  } catch(error) {
+    console.log(error);
+    res.send("error catch");
+  }
+})
 
 
 
@@ -201,8 +217,8 @@ router.post("/welcome_mail",async(req,res)=>{
     port: 465,
     secure: true, 
     auth: {
-      user: 'top.clone.factory@gmail.com',
-      pass: '@cloneLAL13'
+      user: process.env.G_MAIL,
+      pass: process.env.G_PASSWORD
     }
   });
       
@@ -255,8 +271,8 @@ router.post("/send_mail",async(req,res)=>{
     port: 465,
     secure: true, 
     auth: {
-      user: 'top.clone.factory@gmail.com',
-      pass: '@cloneLAL13'
+      user: process.env.G_MAIL,
+      pass: process.env.G_PASSWORD
     }
   });
       
