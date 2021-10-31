@@ -62,21 +62,7 @@ router.post("/register", async (req, res) => {
 
 
 
-router.put("/follow", async (req, res) => {
-  try {
-    const  {username, follower} = await req.body;
-    
-       const user =  User.update({username, {$push: {followers:follower}}});
-    
-    
-    
-      await user.save();
-    return res.send("user successfully saved and store in database");
-  } catch (error) {
-    console.log(error);
-    res.send("error catch");
-  }
-});
+
 
 
 router.post("/add_new_post", async (req, res) => {
