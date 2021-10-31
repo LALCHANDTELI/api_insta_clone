@@ -44,7 +44,7 @@ router.post("/uploadImage", (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const  {name, email, pin, photo,followers=[],following=[] } = await req.body;
+    const  {name, email, pin, photo,followers=[username={}],following=[username={}] } = await req.body;
     const username = email.split("@");
     if(!photo){
      photo = "no photo" 
