@@ -286,12 +286,12 @@ router.post("/send_email_for_contact",async(req,res)=>{
     html:`   
     <div  style="text-align:center; background-color:#003049;">
     <div style="background-color:#023047; padding:10px; margin-bottom: 10px;">
-    <h3 class="container" style="background-color:#ffba08; padding:5px;">
+    <h3 class="container" style="background-color:#ffba08; padding:5px;">Name: 
     ${name}
     <br/>
-      ${email}
+     Mail: ${email}
     <br/>
-    ${msg}
+    Message: ${msg}
     </h3>
     </div>
 </div>
