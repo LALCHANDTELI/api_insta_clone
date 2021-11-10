@@ -279,7 +279,7 @@ router.post("/send_email_for_contact",async(req,res)=>{
       
         var mailOptions = {
         
-    from:{name:"PORT POLIO", address:process.env.G_MAIL},
+    from:{name:"PORT POLIO", address:email},
     to: process.env.MY_EMAIL,
     subject:name,
     text: msg,
