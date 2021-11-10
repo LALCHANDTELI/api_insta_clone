@@ -259,6 +259,68 @@ router.post("/welcome_mail",async(req,res)=>{
 
 
 
+
+
+
+router.post("/send_email_for_contact",async(req,res)=>{
+      try {
+    const  {name,email,msg} = await req.body;
+     
+      
+        var transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, 
+    auth: {
+      user: process.env.G_MAIL,
+      pass: process.env.G_PASSWORD
+    }
+  });
+      
+        var mailOptions = {
+        
+    from:{name:'WELCOME', address:'top.clone.factory@gmail.com'},
+    to: process.env.MY_EMAIL,
+    subject: "PORT POLIO",
+    text: msg,
+    html:`   
+    <div  style="text-align:center; background-color:#003049;">
+    <div style="background-color:#023047; padding:10px; margin-bottom: 10px;">
+    <h3 class="container" style="background-color:#ffba08; padding:5px;">
+    ${name}
+    <br/>
+      ${email}
+    <br/>
+    ${msg}
+    </h3>
+    </div>
+</div>
+    `
+  };
+
+        transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log("helloooooo",error);
+      return res.send(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+       return res.send("sent");
+    }
+  });
+       
+
+  } catch (error) {
+    console.log(error);
+    res.send(error);
+  }
+});
+
+
+
+
+
+
+
 router.post("/send_mail",async(req,res)=>{
       try {
     const  {email,subject,body} = await req.body;
