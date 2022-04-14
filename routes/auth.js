@@ -22,7 +22,7 @@ const Post = require("../models/Post");
 
 router.get("/", (req, res) => {
   
-   res.send("health okay okay");
+   res.send("health okay");
   
  
 });
