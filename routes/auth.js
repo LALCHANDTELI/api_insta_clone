@@ -217,8 +217,8 @@ router.post("/welcome_mail",async(req,res)=>{
     port: 465,
     secure: true, 
     auth: {
-      user: process.env.G_MAIL,
-      pass: process.env.G_PASSWORD
+      user: "ktcollections.center@gmail.com",
+      pass: "@ktcollectionsLAL13"
     }
   });
       
